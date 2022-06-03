@@ -22,7 +22,7 @@
     max-width: 640px;
 	width: 100%!important;
     max-height: 420px;
-	height: 100%!important;
+	height: 360px;
 }
 
 .vjs-icon-play, .video-js .vjs-play-control .vjs-icon-placeholder, .video-js .vjs-big-play-button .vjs-icon-placeholder:before {
