@@ -1,5 +1,5 @@
 
-<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }} – {{ site.description }}</title>
+<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
     {% include favicon.html %}
@@ -26,10 +26,10 @@
     "name": "{{site.dev}}",
     "url": "{{ site.url }}{{page.url}}"
   },
-  "headline": "{{ site.title }}{% if page.title %} – {{ page.title }}{% endif %}",
+  "headline": "{{ site.name }}{% if page.title %} – {{ page.title }}{% endif %}",
   "image": {
     "@type": "ImageObject",
-    "url": "{{site.avatar}}{% if page.title %}{{page.ava}}{% endif %}"
+    "url": "{{site.poster}}{% if page.title %}{{page.ava}}{% endif %}"
   },
   "datePublished": "{% if page.title %}{{ page.date | date_to_xmlschema }}{% endif %}",
   "publisher": {

@@ -5,35 +5,21 @@ name: DAFFtube
 
 description: Web Stream from Nowhere
 
+poster: /assets/img/dafftube.webp
+
 avatar: /assets/img/logo-img.webp
 
 iklanVideo: https://www.youtube.com/embed/r0OnstvpjHQ
-
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github: 
-  instagram:
-  linkedin:
-  pinterest:
-  rss: 
-  twitter: 
-  stackoverflow: 
-  youtube: 
-  googleplus: 
-
 
 disqus:
 
 google_analytics:
 
-url:
+url: https://server.daffadev.my.id
 
 baseurl: ""
 
-permalink: /:title/
+permalink: /:title
 
 version: v1.2.0
 
