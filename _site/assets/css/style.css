@@ -104,7 +104,6 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222;
   font-weight: bold;
   padding: 0;
 }
@@ -133,7 +132,6 @@ h3 {
 
 h4 {
   font-size: 18px;
-  color: #666;
 }
 
 p {
@@ -141,7 +139,6 @@ p {
 }
 
 a {
-  color: #4183C4;
   text-decoration: none;
   cursor: pointer;
 }
@@ -189,7 +186,6 @@ img {
 
 .date {
   font-style: italic;
-  color: #666;
 }
 
 ::-moz-selection {
