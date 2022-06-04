@@ -1,0 +1,34 @@
+
+<script>
+ function playMe(play) {
+        var playBtn = document.getElementById('playBtn')
+        var stopBtn = document.getElementById('stopBtn')
+        var marq = document.getElementById('marq')
+
+        if(play) {
+            stopBtn.style.display = "block"
+            playBtn.style.display = "none"
+            marq.style.display = "none"
+        } else {
+            playBtn.style.display = "none"
+            stopBtn.style.display = "block"
+            marq.style.display = "none"
+        }
+    }
+
+function playMe(play) {
+    var playBtn = document.getElementById('playBtn')
+    var stopBtn = document.getElementById('stopBtn')
+    var marq = document.getElementById('marq')
+
+    if(play) {
+        stopBtn.style.display = "block"
+        playBtn.style.display = "none" 
+        marq.style.display = "none"
+    } else {
+        stopBtn.style.display = "none"
+        playBtn.style.display = "block"
+        marq.style.display = "block"
+    }
+}
+</script>

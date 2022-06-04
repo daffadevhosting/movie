@@ -25,3 +25,10 @@ $georgia: Georgia, serif;
     @content;
   }
 }
+
+// surface duo breakpoints
+@mixin sfDUO {
+  @media screen and (width: 540px) {
+    @content;
+  }
+}

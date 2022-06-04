@@ -12,24 +12,7 @@
 /**************/
 /* BASE RULES */
 /**************/
-
-html {
-  max-width:425px!important;
-  margin:auto;
-  background:#666666;
-
-  @include mobile {
-    background:#fff;
-  }
-}
-
-body {
-    max-width: 425px!important;
-}
-.responsive {
-    max-width: 425px!important;
-}
-
+html {background:#666666;}
 .undermain {
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRkQad6HEwqx9JJHc-nLUcUJHa2KfMGSThFg&usqp=CAU);
     background-size: auto;
@@ -331,8 +314,11 @@ footer {
 }
 
 .ion-page {
-    max-width: 425px!important;
+    max-width: 540px!important;
     margin: auto;
+
+    @include mobile {
+      margin: 0!important;}
 }
 .toolbar-container{padding:0!important;}
 

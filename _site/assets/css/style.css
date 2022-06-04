@@ -60,23 +60,7 @@ table {
 /* BASE RULES */
 /**************/
 html {
-  max-width: 425px !important;
-  margin: auto;
   background: #666666;
-}
-
-@media screen and (max-width: 640px) {
-  html {
-    background: #fff;
-  }
-}
-
-body {
-  max-width: 425px !important;
-}
-
-.responsive {
-  max-width: 425px !important;
 }
 
 .undermain {
@@ -386,8 +370,14 @@ footer {
 }
 
 .ion-page {
-  max-width: 425px !important;
+  max-width: 540px !important;
   margin: auto;
+}
+
+@media screen and (max-width: 640px) {
+  .ion-page {
+    margin: 0 !important;
+  }
 }
 
 .toolbar-container {

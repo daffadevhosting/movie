@@ -1,6 +1,6 @@
 
         <ion-tab tab="movies">
-          <ion-header translucent>
+          <ion-header no-padding>
             <ion-toolbar style="padding:0!important;">
           <div style="padding-top:56.25%;position:relative;">
 <iframe name="iframe" src="{{site.iklanVideo}}" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"></iframe>
@@ -26,7 +26,7 @@
               <h3>{{movie.title}}</h3>
               <p>{{movie.cast}}</p>
             </ion-label>
-<ion-button color="light" href="{{movie.url}}" target="iframe">
+<ion-button color="light" href="{{movie.url}}" target="iframe" onclick="playMe(true)" id="playBtn">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
 </ion-button>
@@ -99,5 +99,39 @@ async function dismissI() {
   await cardModal.dismiss({
     'dismissed': true
   });
+}
+</script>
+
+<script>
+ function playMe(play) {
+        var playBtn = document.getElementById('playBtn')
+        var stopBtn = document.getElementById('stopBtn')
+        var marq = document.getElementById('marq')
+
+        if(play) {
+            stopBtn.style.display = "block"
+            playBtn.style.display = "none"
+            marq.style.display = "none"
+        } else {
+            playBtn.style.display = "none"
+            stopBtn.style.display = "block"
+            marq.style.display = "none"
+        }
+    }
+
+function playMe(play) {
+    var playBtn = document.getElementById('playBtn')
+    var stopBtn = document.getElementById('stopBtn')
+    var marq = document.getElementById('marq')
+
+    if(play) {
+        stopBtn.style.display = "block"
+        playBtn.style.display = "none" 
+        marq.style.display = "none"
+    } else {
+        stopBtn.style.display = "none"
+        playBtn.style.display = "block"
+        marq.style.display = "block"
+    }
 }
 </script>
