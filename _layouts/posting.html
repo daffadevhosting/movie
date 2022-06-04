@@ -53,6 +53,16 @@
        </ion-header>
       <ion-content class="ion-padding">
       {{ content }}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1171588080744378"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-1171588080744378"
+     data-ad-slot="2850989427"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
       </ion-content>
 <ion-modal trigger="trigger-chat" id="menuChat">
 <ion-modal-header collapse="fade" translucent="true">
@@ -71,6 +81,7 @@
   </ion-modal>
     </ion-app>
     {% include analytics.html %}
+    {% include js.html %}
 <script>
 var elem = document.getElementById("fullscreen");
 function openFullscreen() {
@@ -89,7 +100,7 @@ function openFullscreen() {
   const canDismissModal = document.querySelector('#can-dismiss-modal');
   const app = document.querySelector('ion-app');
 
-  sheetModal.breakpoints = [0.1, 0.7, 1];
+  sheetModal.breakpoints = [0.1, 0.7, 0.7];
   sheetModal.initialBreakpoint = 0.7;
   
   cardModal.swipeToClose = true;
