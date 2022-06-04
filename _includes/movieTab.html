@@ -1,0 +1,103 @@
+
+        <ion-tab tab="movies">
+          <ion-header translucent>
+            <ion-toolbar style="padding:0!important;">
+          <div style="padding-top:56.25%;position:relative;">
+<iframe name="iframe" src="{{site.iklanVideo}}" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"></iframe>
+</div>
+<ion-item>
+  <ion-avatar slot="start">
+    <img src="{{site.avatar}}">
+  </ion-avatar>
+  <ion-label>{{site.name}}</ion-label>
+          <ion-buttons slot="end">
+            <ion-menu-button id="trigger-modal" auto-hide="false"></ion-menu-button>
+          </ion-buttons>
+</ion-item>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen>
+            {% for movie in site.data.DAFFtube %}
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="{{movie.ava}}" />
+            </ion-avatar>
+            <ion-label>
+              <h3>{{movie.title}}</h3>
+              <p>{{movie.cast}}</p>
+            </ion-label>
+<ion-button color="light" href="{{movie.url}}" target="iframe">
+  <ion-icon slot="start" name="play"></ion-icon>
+  <ion-label>Play</ion-label>
+</ion-button>
+          </ion-item>
+            {% endfor %}
+  <ion-modal trigger="trigger-modal"  id="menu">
+<ion-modal-header collapse="fade" translucent="true">
+        <ion-toolbar>
+<ion-title>Menu</ion-title>
+    <ion-buttons slot="end">
+      <ion-button onClick="dismissMe()">
+        <ion-icon color="danger" slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+        </ion-toolbar>
+     </ion-modal-header>
+    <ion-content class="ion-padding">
+<p>Masih Di grepe</p>
+<img src="/assets/img/404.jpg" style="width:300px;display:block;margin:auto;"/>
+    </ion-content>
+  </ion-modal>
+          </ion-content>
+        </ion-tab>
+<script>
+  const sheetModal = document.querySelector('#menu');
+  const cardModal = document.querySelector('#menuHome');
+  const app = document.querySelector('ion-app');
+
+  sheetModal.breakpoints = [0.1, 0.6, 0.6];
+  sheetModal.initialBreakpoint = 0.6;
+  
+  cardModal.swipeToClose = true;
+  cardModal.presentingElement = document.querySelector('ion-app');
+  
+  canDismissModal.canDismiss = async () => {
+    const actionSheet = document.createElement('ion-action-sheet');
+    
+    actionSheet.header = 'Are you sure you want to discard your changes?';
+    actionSheet.buttons = [
+      {
+        text: 'Discard Changes',
+        role: 'destructive'
+      },
+      {
+        text: 'Keep Editing',
+        role: 'cancel'
+      }
+    ];
+    
+    app.appendChild(actionSheet);
+    
+    await actionSheet.present();
+            
+    const { role } = await actionSheet.onDidDismiss();
+    
+    if (role === 'destructive') {
+      return true;
+    }
+    
+    return false;    
+  }
+
+async function dismissMe() {
+  await sheetModal.dismiss({
+    'dismissed': true
+  });
+}
+
+async function dismissI() {
+  await cardModal.dismiss({
+    'dismissed': true
+  });
+}
+</script>

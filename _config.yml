@@ -1,0 +1,60 @@
+#
+
+name: DAFFtube
+
+description: Web Stream from Nowhere
+
+avatar: /assets/img/logo-img.webp
+
+iklanVideo: https://www.youtube.com/embed/r0OnstvpjHQ
+
+footer-links:
+  dribbble:
+  email:
+  facebook:
+  flickr:
+  github: 
+  instagram:
+  linkedin:
+  pinterest:
+  rss: 
+  twitter: 
+  stackoverflow: 
+  youtube: 
+  googleplus: 
+
+
+disqus:
+
+google_analytics:
+
+url:
+
+baseurl: ""
+
+permalink: /:title/
+
+version: v1.2.0
+
+kramdown:
+
+  input: GFM
+
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+
+    css_class: 'highlight'
+
+sass:
+  style: :expanded
+
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
