@@ -26,13 +26,45 @@
               <h3>{{movie.title}}</h3>
               <p>{{movie.cast}}</p>
             </ion-label>
-<ion-button color="light" href="{{movie.url}}" target="iframe" onclick="playMe(true)" id="playBtn">
+<ion-button color="danger" href="javascript: history.back()" onclick="playMe{{movie.noID}}(false)" id="stopBtn-{{movie.noID}}" style="display:none">
+  <ion-icon slot="start" name="stop"></ion-icon>
+  <ion-label>Stop</ion-label>
+</ion-button>
+<ion-button color="light" href="{{movie.url}}" target="iframe" onclick="playMe{{movie.noID}}(true)" id="playBtn-{{movie.noID}}">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
 </ion-button>
           </ion-item>
+
+<script>
+ function playMe{{movie.noID}}(play) {
+        var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
+        var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
+
+        if(play) {
+            stopBtn{{movie.noID}}.style.display = "block"
+            playBtn{{movie.noID}}.style.display = "none"
+        } else {
+            playBtn{{movie.noID}}.style.display = "none"
+            stopBtn{{movie.noID}}.style.display = "block"
+        }
+    }
+
+function playMe{{movie.noID}}(play) {
+    var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
+    var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
+
+    if(play) {
+        stopBtn{{movie.noID}}.style.display = "block"
+        playBtn{{movie.noID}}.style.display = "none"
+    } else {
+        stopBtn{{movie.noID}}.style.display = "none"
+        playBtn{{movie.noID}}.style.display = "block"
+    }
+}
+</script>
             {% endfor %}
-  <ion-modal trigger="trigger-modal"  id="menu">
+  <ion-modal trigger="trigger-modal" id="menu">
 <ion-modal-header collapse="fade" translucent="true">
         <ion-toolbar>
 <ion-title>Menu</ion-title>
@@ -99,39 +131,5 @@ async function dismissI() {
   await cardModal.dismiss({
     'dismissed': true
   });
-}
-</script>
-
-<script>
- function playMe(play) {
-        var playBtn = document.getElementById('playBtn')
-        var stopBtn = document.getElementById('stopBtn')
-        var marq = document.getElementById('marq')
-
-        if(play) {
-            stopBtn.style.display = "block"
-            playBtn.style.display = "none"
-            marq.style.display = "none"
-        } else {
-            playBtn.style.display = "none"
-            stopBtn.style.display = "block"
-            marq.style.display = "none"
-        }
-    }
-
-function playMe(play) {
-    var playBtn = document.getElementById('playBtn')
-    var stopBtn = document.getElementById('stopBtn')
-    var marq = document.getElementById('marq')
-
-    if(play) {
-        stopBtn.style.display = "block"
-        playBtn.style.display = "none" 
-        marq.style.display = "none"
-    } else {
-        stopBtn.style.display = "none"
-        playBtn.style.display = "block"
-        marq.style.display = "block"
-    }
 }
 </script>

@@ -1,7 +1,8 @@
 
-<title>{{ site.name }}{% if page.title %} – {{ page.title }}{% endif %} – {{ site.description }}</title>
+<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }} – {{ site.description }}</title>
 
     {% include meta.html %}
+    {% include favicon.html %}
 
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,3 +17,32 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "author": {
+    "@type": "Person",
+    "name": "{{site.dev}}",
+    "url": "{{ site.url }}{{page.url}}"
+  },
+  "headline": "{{ site.title }}{% if page.title %} – {{ page.title }}{% endif %}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{site.avatar}}{% if page.title %}{{page.ava}}{% endif %}"
+  },
+  "datePublished": "{% if page.title %}{{ page.date | date_to_xmlschema }}{% endif %}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{site.name}}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{site.avatar}}"
+    }
+  },
+  "keywords": "lalajo pilem, nonton streaming, Movie Streaming, Nonton Gratis{% if page.title %}, {{ page.title }}{% endif %}",
+  "dateModified": "{% if page.title %}{{ page.date | date_to_xmlschema }}{% endif %}",
+  "mainEntityOfPage": "{{site.url}}{{page.url}}",
+  "description": "{{site.description}}{% if page.title %} – {{ page.excerpt| strip_html }}{% endif %}"
+}
+</script>

@@ -14,38 +14,38 @@
   <ion-label><h2>{{page.title}}</h2><p>{{page.aktor}}</p></ion-label>
 <ion-buttons>
 <ion-button onclick="openFullscreen();">
-  <ion-icon name="open-outline"></ion-icon>
+  <ion-icon slot="icon-only" name="open-outline"></ion-icon>
 </ion-buttons>
 </ion-button>
 </ion-item>
 <ion-item fullscreen>
 <ion-buttons>
 <ion-button onclick="history.back()">
-<ion-icon name="chevron-back-outline"></ion-icon>
+<ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
 </ion-button>
 </ion-buttons>
 <div class="small-separator"></div>
 <ion-buttons>
 <ion-button>
-<ion-icon name="thumbs-up-outline"></ion-icon>
+<ion-icon slot="icon-only" name="thumbs-up-outline"></ion-icon>
 </ion-button>
 </ion-buttons>
 <div class="small-separator"></div>
 <ion-buttons>
 <ion-button>
-<ion-icon name="thumbs-down-outline"></ion-icon>
+<ion-icon slot="icon-only" name="thumbs-down-outline"></ion-icon>
+</ion-button>
+</ion-buttons>
+<div class="small-separator"></div>
+<ion-buttons>
+<ion-button id="trigger-chat">
+<ion-icon slot="icon-only" name="chatbox-outline"></ion-icon>
 </ion-button>
 </ion-buttons>
 <div class="small-separator"></div>
 <ion-buttons>
 <ion-button>
-<ion-icon name="chatbubbles-outline"></ion-icon>
-</ion-button>
-</ion-buttons>
-<div class="small-separator"></div>
-<ion-buttons>
-<ion-button>
-<ion-icon name="share-social-outline"></ion-icon>
+<ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
 </ion-button>
 </ion-buttons>
 </ion-item>
@@ -54,6 +54,19 @@
       <ion-content class="ion-padding">
       {{ content }}
       </ion-content>
+<ion-modal trigger="trigger-chat" id="menuChat">
+<ion-modal-header collapse="fade" translucent="true">
+        <ion-toolbar>
+<ion-title>Komentar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button onClick="dismissMe()">
+        <ion-icon color="danger" slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+        </ion-toolbar>
+     </ion-modal-header>
+    <ion-content class="ion-padding">Modal Content</ion-content>
+  </ion-modal>
     </ion-app>
     {% include analytics.html %}
 <script>
@@ -67,6 +80,53 @@ function openFullscreen() {
     elem.msRequestFullscreen();
   }
 }
+</script>
+<script>
+  const sheetModal = document.querySelector('#menuChat');
+  const cardModal = document.querySelector('#sheet-modal');
+  const canDismissModal = document.querySelector('#can-dismiss-modal');
+  const app = document.querySelector('ion-app');
+
+  sheetModal.breakpoints = [0.1, 0.7, 1];
+  sheetModal.initialBreakpoint = 0.7;
+  
+  cardModal.swipeToClose = true;
+  cardModal.presentingElement = document.querySelector('ion-app');
+  
+  canDismissModal.canDismiss = async () => {
+    const actionSheet = document.createElement('ion-action-sheet');
+    
+    actionSheet.header = 'Are you sure you want to discard your changes?';
+    actionSheet.buttons = [
+      {
+        text: 'Discard Changes',
+        role: 'destructive'
+      },
+      {
+        text: 'Keep Editing',
+        role: 'cancel'
+      }
+    ];
+    
+    app.appendChild(actionSheet);
+    
+    await actionSheet.present();
+            
+    const { role } = await actionSheet.onDidDismiss();
+    
+    if (role === 'destructive') {
+      return true;
+    }
+    
+    return false;    
+  }
+
+async function dismissMe() {
+  await sheetModal.dismiss({
+    'dismissed': true
+  });
+}
+
 </script>
   </body>
 </html>

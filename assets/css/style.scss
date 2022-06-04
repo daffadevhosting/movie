@@ -12,7 +12,12 @@
 /**************/
 /* BASE RULES */
 /**************/
-html {background:#666666;}
+html {background:#666666;
+
+  @include mobile {
+    background:#fff;
+  }
+}
 .undermain {
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRkQad6HEwqx9JJHc-nLUcUJHa2KfMGSThFg&usqp=CAU);
     background-size: auto;
