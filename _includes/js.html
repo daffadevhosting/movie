@@ -2,7 +2,7 @@
             {% for post in site.posts %}
 <script>
   const postModal{{ post.date | date: "%-m%-d%y" }} = document.querySelector('#menuPost{{ post.date | date: "%-m%-d%y" }}');
-  const app{{ post.date | date: "%-m%-d%y" }} = document.querySelector('ion-page');
+  const app{{ post.date | date: "%-m%-d%y" }} = document.querySelector('ion-app');
 
   postModal{{ post.date | date: "%-m%-d%y" }}.breakpoints = [0.0, 0.0, 0.0];
   postModal{{ post.date | date: "%-m%-d%y" }}.initialBreakpoint = 1.0;
@@ -15,7 +15,7 @@ async function dismissPost{{ post.date | date: "%-m%-d%y" }}() {
 }
 </script>
             {% endfor %}
-<script>
+<script type="text/javascript">
 $('ion-toolbar ion-item').tooltip().eq(0).tooltip('show').tooltip('disable').one('mouseout', function() {
   $(this).tooltip('enable');
 });
@@ -75,6 +75,48 @@ async function dismissIm() {
   });
 }
 </script>
+    <script>
+      let length = 0;
+      const list = document.getElementById('list');
+      const infiniteScroll = document.getElementById('infinite-scroll');
+
+      infiniteScroll.addEventListener('ionInfinite', async function () {
+        if (length < users.length) {
+          console.log('Loading data...');
+          await wait(500);
+          infiniteScroll.complete();
+          appendItems(8);
+          console.log('Done');
+        } else {
+          console.log('No More Data');
+          infiniteScroll.disabled = true;
+        }
+      });
+
+      function appendItems(number) {
+        console.log('length is', length);
+        const originalLength = length;
+        for (var i = 0; i < number; i++) {
+          const el = document.createElement('ion-item');
+          el.innerHTML = `
+            {% for post in site.posts %}
+            {% endfor %}
+        `;
+          list.appendChild(el);
+          length++;
+        }
+      }
+
+      function wait(time) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, time);
+        });
+      }
+
+      appendItems(8);
+    </script>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";

@@ -11,8 +11,9 @@
 
           <ion-content fullscreen no-padding>
             {% for post in site.posts %}
-          <div style="padding-top:56.25%;position:relative;" id="Post{{ post.date | date: '%-m%-d%y' }}">
+          <div style="padding-top:56.25%;position:relative;cursor:pointer" id="Post{{ post.date | date: '%-m%-d%y' }}">
     {% include ribon.html %}
+<div color="light" class="iconplay"></div>
 <img src="{{post.poster}}" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"/>
 </div>
         <ion-toolbar color="default">
@@ -30,11 +31,9 @@
 <iframe src="{{post.video}}" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"></iframe>
 </div>
 </ion-toolbar>
-        <ion-toolbar>
+        <ion-toolbar style="padding:0!important;">
             <ion-item rel="tooltip" data-original-title="Tarik kebawah untuk menutup">
-                <ion-avatar slot="start">
-                    <img src={{post.ava}}/>
-                </ion-avatar>
+                {% include res.html %}
                 <ion-label><h2>{{post.title}}</h2></ion-label>
 <ion-button color="dark" href="{{ site.baseurl }}{{post.url}}">
   <ion-icon slot="start" name="play"></ion-icon>
@@ -43,8 +42,25 @@
             </ion-item>
         </ion-toolbar>
      </ion-modal-header>
-    <ion-content class="ion-padding">
-        
+    <ion-content fullscreen scroll-y="true">
+        <ion-list>
+          <ion-list-header>Para Pemain </ion-list-header>
+            {% for as in post.cast %}
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="{{ as.ava }}" />
+            </ion-avatar>
+            <ion-label>
+              <h2>{{as.nama}}</h2>
+              <h4>Pemeran {{as.sebagai}}</h4>
+            </ion-label>
+          </ion-item>
+            {% endfor %}
+        </ion-list>
+        <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+          <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
     </ion-content>
   </ion-modal>
             {% endfor %}

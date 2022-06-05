@@ -18,60 +18,68 @@
             </ion-toolbar>
           </ion-header>
           <ion-content fullscreen>
-            {% for movie in site.data.DAFFtube %}
-          <ion-item>
+    {% for category in site.categories %}
+      <ion-list>
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <div id="{{ category_name | slugize }}"></div>
+        <ion-list-header>{{ category_name }}</ion-list-header>
+        <a name="Kategori {{ category_name | slugize }}"></a>
+        {% for post in site.categories[category_name] %}
+<ion-item>
             <ion-avatar slot="start">
-              <img src="{{movie.ava}}" />
+              <img src="{{post.ava}}" />
             </ion-avatar>
             <ion-label>
-              <h3 color="dark">{{movie.title}}</h3>
-              <p>{{movie.cast}}</p>
+              <h3 color="dark">{{post.title}}</h3>
+              <p>{{post.aktor}}</p>
             </ion-label>
-<ion-button color="danger" href="javascript: history.back()" onclick="playMe{{movie.noID}}(false)" id="stopBtn-{{movie.noID}}" style="display:none">
+<ion-button color="danger" href="javascript: history.back()" onclick="playMe{{ post.date | date: '%-m%-d%y' }}(false)" id="stopBtn{{ post.date | date: '%-m%-d%y' }}" style="display:none">
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
 <ion-buttons>
-<ion-button color="success" href="{{movie.url}}" target="iframe" onclick="playMe{{movie.noID}}(true)" id="playBtn-{{movie.noID}}">
+<ion-button color="success" href="{{post.video}}" target="iframe" onclick="playMe{{ post.date | date: '%-m%-d%y' }}(true)" id="playBtn{{ post.date | date: '%-m%-d%y' }}">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
 </ion-button>
 <ion-buttons>
-          </ion-item>
+</ion-item>
 <script>
- function playMe{{movie.noID}}(play) {
-        var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
-        var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
+ function playMe{{ post.date | date: "%-m%-d%y" }}(play) {
+        var playBtn{{ post.date | date: "%-m%-d%y" }} = document.getElementById('playBtn{{ post.date | date: "%-m%-d%y" }}')
+        var stopBtn{{ post.date | date: "%-m%-d%y" }} = document.getElementById('stopBtn{{ post.date | date: "%-m%-d%y" }}')
         var marq = document.getElementById('marq')
 
         if(play) {
-            stopBtn{{movie.noID}}.style.display = "block"
-            playBtn{{movie.noID}}.style.display = "none"
+            stopBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "block"
+            playBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "none"
             marq.style.display = "block"
         } else {
-            playBtn{{movie.noID}}.style.display = "none"
-            stopBtn{{movie.noID}}.style.display = "block"
+            playBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "none"
+            stopBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "block"
             marq.style.display = "none"
         }
     }
 
-function playMe{{movie.noID}}(play) {
-    var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
-    var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
+function playMe{{ post.date | date: "%-m%-d%y" }}(play) {
+    var playBtn{{ post.date | date: "%-m%-d%y" }} = document.getElementById('playBtn{{ post.date | date: "%-m%-d%y" }}')
+    var stopBtn{{ post.date | date: "%-m%-d%y" }} = document.getElementById('stopBtn{{ post.date | date: "%-m%-d%y" }}')
     var marq = document.getElementById('marq')
 
     if(play) {
-        stopBtn{{movie.noID}}.style.display = "block"
-        playBtn{{movie.noID}}.style.display = "none"
+        stopBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "block"
+        playBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "none"
         marq.style.display = "none"
     } else {
-        stopBtn{{movie.noID}}.style.display = "none"
-        playBtn{{movie.noID}}.style.display = "block"
+        stopBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "none"
+        playBtn{{ post.date | date: "%-m%-d%y" }}.style.display = "block"
         marq.style.display = "block"
     }
 }
 </script>
-            {% endfor %}
+        {% endfor %}
+      </ion-list>
+    {% endfor %}
   <ion-modal trigger="trigger-modal" id="menu">
 <ion-modal-header collapse="fade" translucent="true">
         <ion-toolbar>

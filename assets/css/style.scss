@@ -166,6 +166,8 @@ img {
     top: 0;
 }
 
+.iconplay{display: block;background-image: url(/assets/css/play.svg);position: absolute;z-index: 9;background-position: center;background-repeat: no-repeat;top: 32%;width: 100%;height: 100px;}
+
 .ipc-watchlist-ribbon {
     display: block;
     font-size: 17px;
@@ -173,6 +175,13 @@ img {
     z-index: 9999999;
     top: 0;
     margin: 10px;
+}
+
+.ipc-watchlist-res {
+    display: block;
+    font-size: 17px;
+    z-index: 9999999;
+    margin: 8px;
 }
 .ipc-watchlist-ribbon__icon {
     position: absolute;
