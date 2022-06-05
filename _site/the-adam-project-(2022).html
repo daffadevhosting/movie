@@ -625,47 +625,14 @@ function openFullscreen() {
 }
 </script>
 <script>
-  const sheetModal = document.querySelector('#menuChat');
-  const cardModal = document.querySelector('#sheet-modal');
-  const canDismissModal = document.querySelector('#can-dismiss-modal');
-  const app = document.querySelector('ion-app');
+  const sheetModalChat = document.querySelector('#menuChat');
+  const appChat = document.querySelector('ion-app');
 
-  sheetModal.breakpoints = [0.1, 0.7, 0.7];
-  sheetModal.initialBreakpoint = 0.7;
+  sheetModalChat.breakpoints = [0.0, 0.7, 0.7];
+  sheetModalChat.initialBreakpoint = 0.7;
   
-  cardModal.swipeToClose = true;
-  cardModal.presentingElement = document.querySelector('ion-app');
-  
-  canDismissModal.canDismiss = async () => {
-    const actionSheet = document.createElement('ion-action-sheet');
-    
-    actionSheet.header = 'Are you sure you want to discard your changes?';
-    actionSheet.buttons = [
-      {
-        text: 'Discard Changes',
-        role: 'destructive'
-      },
-      {
-        text: 'Keep Editing',
-        role: 'cancel'
-      }
-    ];
-    
-    app.appendChild(actionSheet);
-    
-    await actionSheet.present();
-            
-    const { role } = await actionSheet.onDidDismiss();
-    
-    if (role === 'destructive') {
-      return true;
-    }
-    
-    return false;    
-  }
-
 async function dismissMe() {
-  await sheetModal.dismiss({
+  await sheetModalChat.dismiss({
     'dismissed': true
   });
 }
