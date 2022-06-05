@@ -229,10 +229,6 @@ img {
   height: 100px;
 }
 
-.iconplay:hover {
-  display: none;
-}
-
 .ipc-watchlist-ribbon {
   display: block;
   font-size: 17px;

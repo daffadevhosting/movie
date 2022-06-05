@@ -26,6 +26,11 @@
     <img src="{{post.ava}}">
   </ion-avatar>
   <ion-label><h3 color="dark">{{post.title}}</h3><p><ion-icon color="warning" name="star"></ion-icon> {{post.star}}</p></ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+<ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 </ion-item>
         </ion-toolbar>
   <ion-modal trigger="Post{{ post.date | date: '%-m%-d%y' }}" id="menuPost{{ post.date | date: '%-m%-d%y' }}">
