@@ -197,7 +197,8 @@ $(".preloader").fadeOut();
      </ion-modal-header>
     <ion-content class="ion-padding">
 <p>Masih Di grepe</p>
-<img src="/assets/img/404.jpg" style="width:300px;display:block;margin:auto;"/></ion-content>
+<img src="/assets/img/404.jpg" style="width:300px;display:block;margin:auto;"/>
+</ion-content>
   </ion-modal>
     </ion-app>
     
@@ -219,6 +220,24 @@ $(".preloader").fadeOut();
 
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1683278031980238',
+      xfbml      : true,
+      version    : 'v14.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
 
 <script>

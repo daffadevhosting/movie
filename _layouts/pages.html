@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include isihead.html %}
+  </head>
+  <body class="responsive">
+    <ion-app>
+          {% include loader.html %}
+      <ion-header translucent>
+        <ion-toolbar fullscreen>
+<ion-buttons>
+<ion-button slot="start" onclick="history.back()">
+<ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+</ion-button>
+              <ion-title>{{site.name}}</ion-title>
+</ion-buttons>
+        </ion-toolbar>
+       </ion-header>
+      <ion-content class="ion-padding">
+      {{ content }}
+      </ion-content>
+    </ion-app>
+    {% include analytics.html %}
+    {% include js.html %}
+  </body>
+</html>

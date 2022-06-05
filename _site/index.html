@@ -537,18 +537,15 @@ $(".preloader").fadeOut();
         var playBtn8 = document.getElementById('playBtn-8')
         var stopBtn8 = document.getElementById('stopBtn-8')
         var marq = document.getElementById('marq')
-        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn8.style.display = "block"
             playBtn8.style.display = "none"
             marq.style.display = "block"
-            hide.style.display = "block"
         } else {
             playBtn8.style.display = "none"
             stopBtn8.style.display = "block"
             marq.style.display = "none"
-            hide.style.display = "none"
         }
     }
 
@@ -556,18 +553,15 @@ function playMe8(play) {
     var playBtn8 = document.getElementById('playBtn-8')
     var stopBtn8 = document.getElementById('stopBtn-8')
     var marq = document.getElementById('marq')
-    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn8.style.display = "block"
         playBtn8.style.display = "none"
         marq.style.display = "none"
-        hide.style.display = "none"
     } else {
         stopBtn8.style.display = "none"
         playBtn8.style.display = "block"
         marq.style.display = "block"
-        hide.style.display = "block"
     }
 }
 </script>
@@ -597,18 +591,15 @@ function playMe8(play) {
         var playBtn16 = document.getElementById('playBtn-16')
         var stopBtn16 = document.getElementById('stopBtn-16')
         var marq = document.getElementById('marq')
-        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn16.style.display = "block"
             playBtn16.style.display = "none"
             marq.style.display = "block"
-            hide.style.display = "block"
         } else {
             playBtn16.style.display = "none"
             stopBtn16.style.display = "block"
             marq.style.display = "none"
-            hide.style.display = "none"
         }
     }
 
@@ -616,18 +607,15 @@ function playMe16(play) {
     var playBtn16 = document.getElementById('playBtn-16')
     var stopBtn16 = document.getElementById('stopBtn-16')
     var marq = document.getElementById('marq')
-    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn16.style.display = "block"
         playBtn16.style.display = "none"
         marq.style.display = "none"
-        hide.style.display = "none"
     } else {
         stopBtn16.style.display = "none"
         playBtn16.style.display = "block"
         marq.style.display = "block"
-        hide.style.display = "block"
     }
 }
 </script>
@@ -657,18 +645,15 @@ function playMe16(play) {
         var playBtn24 = document.getElementById('playBtn-24')
         var stopBtn24 = document.getElementById('stopBtn-24')
         var marq = document.getElementById('marq')
-        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn24.style.display = "block"
             playBtn24.style.display = "none"
             marq.style.display = "block"
-            hide.style.display = "block"
         } else {
             playBtn24.style.display = "none"
             stopBtn24.style.display = "block"
             marq.style.display = "none"
-            hide.style.display = "none"
         }
     }
 
@@ -676,18 +661,15 @@ function playMe24(play) {
     var playBtn24 = document.getElementById('playBtn-24')
     var stopBtn24 = document.getElementById('stopBtn-24')
     var marq = document.getElementById('marq')
-    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn24.style.display = "block"
         playBtn24.style.display = "none"
         marq.style.display = "none"
-        hide.style.display = "none"
     } else {
         stopBtn24.style.display = "none"
         playBtn24.style.display = "block"
         marq.style.display = "block"
-        hide.style.display = "block"
     }
 }
 </script>
@@ -717,18 +699,15 @@ function playMe24(play) {
         var playBtn32 = document.getElementById('playBtn-32')
         var stopBtn32 = document.getElementById('stopBtn-32')
         var marq = document.getElementById('marq')
-        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn32.style.display = "block"
             playBtn32.style.display = "none"
             marq.style.display = "block"
-            hide.style.display = "block"
         } else {
             playBtn32.style.display = "none"
             stopBtn32.style.display = "block"
             marq.style.display = "none"
-            hide.style.display = "none"
         }
     }
 
@@ -736,18 +715,15 @@ function playMe32(play) {
     var playBtn32 = document.getElementById('playBtn-32')
     var stopBtn32 = document.getElementById('stopBtn-32')
     var marq = document.getElementById('marq')
-    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn32.style.display = "block"
         playBtn32.style.display = "none"
         marq.style.display = "none"
-        hide.style.display = "none"
     } else {
         stopBtn32.style.display = "none"
         playBtn32.style.display = "block"
         marq.style.display = "block"
-        hide.style.display = "block"
     }
 }
 </script>
@@ -847,7 +823,7 @@ async function dismissI() {
             <ion-icon name="home"></ion-icon>
           </ion-tab-button>
           <ion-tab-button tab="movies">
-            <ion-label>Movies</ion-label>
+            <ion-label>PlayList</ion-label>
             <ion-icon name="videocam"></ion-icon>
           </ion-tab-button>
           <ion-tab-button tab="blog">
@@ -877,6 +853,24 @@ async function dismissI() {
 
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1683278031980238',
+      xfbml      : true,
+      version    : 'v14.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
 
   </body>

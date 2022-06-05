@@ -112,48 +112,12 @@ $(".preloader").fadeOut();
 
       <ion-header translucent>
         <ion-toolbar fullscreen>
-          <div style="padding-top:56.25%;position:relative;">
-<iframe id="fullscreen" src="" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"></iframe>
-</div>
-<ion-item>
-  <ion-label><h2 color="dark"></h2><p></p></ion-label>
 <ion-buttons>
-<ion-button onclick="openFullscreen();">
-  <ion-icon slot="icon-only" name="open-outline"></ion-icon>
-</ion-buttons>
-</ion-button>
-</ion-item>
-<ion-item fullscreen>
-<ion-buttons>
-<ion-button onclick="history.back()">
+<ion-button slot="start" onclick="history.back()">
 <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
 </ion-button>
+              <ion-title>DAFFtube</ion-title>
 </ion-buttons>
-<div class="small-separator"></div>
-<ion-buttons>
-<ion-button>
-<ion-icon slot="icon-only" name="thumbs-up-outline"></ion-icon>
-</ion-button>
-</ion-buttons>
-<div class="small-separator"></div>
-<ion-buttons>
-<ion-button>
-<ion-icon slot="icon-only" name="thumbs-down-outline"></ion-icon>
-</ion-button>
-</ion-buttons>
-<div class="small-separator"></div>
-<ion-buttons>
-<ion-button id="trigger-chat">
-<ion-icon slot="icon-only" name="chatbox-outline"></ion-icon>
-</ion-button>
-</ion-buttons>
-<div class="small-separator"></div>
-<ion-buttons>
-<ion-button>
-<ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
-</ion-button>
-</ion-buttons>
-</ion-item>
         </ion-toolbar>
        </ion-header>
       <ion-content class="ion-padding">
@@ -321,32 +285,7 @@ $(".preloader").fadeOut();
   </div>
 </article>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1171588080744378"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-1171588080744378"
-     data-ad-slot="2850989427"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
       </ion-content>
-<ion-modal trigger="trigger-chat" id="menuChat">
-<ion-modal-header collapse="fade" translucent="true">
-        <ion-toolbar>
-<ion-title>Komentar</ion-title>
-    <ion-buttons slot="end">
-      <ion-button onClick="dismissMe()">
-        <ion-icon color="danger" slot="icon-only" name="close"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-        </ion-toolbar>
-     </ion-modal-header>
-    <ion-content class="ion-padding">
-<p>Masih Di grepe</p>
-<img src="/assets/img/404.jpg" style="width:300px;display:block;margin:auto;"/></ion-content>
-  </ion-modal>
     </ion-app>
     
 
@@ -368,65 +307,24 @@ $(".preloader").fadeOut();
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
-
 <script>
-var elem = document.getElementById("fullscreen");
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1683278031980238',
+      xfbml      : true,
+      version    : 'v14.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
-<script>
-  const sheetModal = document.querySelector('#menuChat');
-  const cardModal = document.querySelector('#sheet-modal');
-  const canDismissModal = document.querySelector('#can-dismiss-modal');
-  const app = document.querySelector('ion-app');
 
-  sheetModal.breakpoints = [0.1, 0.7, 0.7];
-  sheetModal.initialBreakpoint = 0.7;
-  
-  cardModal.swipeToClose = true;
-  cardModal.presentingElement = document.querySelector('ion-app');
-  
-  canDismissModal.canDismiss = async () => {
-    const actionSheet = document.createElement('ion-action-sheet');
-    
-    actionSheet.header = 'Are you sure you want to discard your changes?';
-    actionSheet.buttons = [
-      {
-        text: 'Discard Changes',
-        role: 'destructive'
-      },
-      {
-        text: 'Keep Editing',
-        role: 'cancel'
-      }
-    ];
-    
-    app.appendChild(actionSheet);
-    
-    await actionSheet.present();
-            
-    const { role } = await actionSheet.onDidDismiss();
-    
-    if (role === 'destructive') {
-      return true;
-    }
-    
-    return false;    
-  }
-
-async function dismissMe() {
-  await sheetModal.dismiss({
-    'dismissed': true
-  });
-}
-
-</script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-layout: posting
+layout: page
 title: Petunjuk Penghapusan Data Pengguna DAFFtube WebApp
 permalink: /penghapusan-data.html
 ---
