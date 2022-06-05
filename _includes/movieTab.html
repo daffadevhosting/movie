@@ -3,6 +3,7 @@
           <ion-header no-padding>
             <ion-toolbar style="padding:0!important;">
           <div style="padding-top:56.25%;position:relative;">
+<marquee id="marq" style="width:100%;padding: 10px;font-size: 14px;font-weight: 700;position: absolute;top:0;color: #f2f2f2;background: rgb(0 0 0 / 14%);z-index:1" id="marq">UNTUK PASANG IKLAN VIDEO KAMU DISINI, HUBUNGI ADMIN</marquee>
 <iframe name="iframe" src="{{site.iklanVideo}}" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"></iframe>
 </div>
 <ion-item>
@@ -42,32 +43,32 @@
  function playMe{{movie.noID}}(play) {
         var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
         var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
-        var marq{{movie.noID}} = document.getElementById('marq{{movie.noID}}')
+        var marq = document.getElementById('marq')
 
         if(play) {
             stopBtn{{movie.noID}}.style.display = "block"
             playBtn{{movie.noID}}.style.display = "none"
-            marq{{movie.noID}}.style.display = "none"
+            marq.style.display = "none"
         } else {
             playBtn{{movie.noID}}.style.display = "none"
             stopBtn{{movie.noID}}.style.display = "block"
-            marq{{movie.noID}}.style.display = "none"
+            marq.style.display = "none"
         }
     }
 
 function playMe{{movie.noID}}(play) {
     var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
     var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
-    var marq{{movie.noID}} = document.getElementById('marq{{movie.noID}}')
+    var marq = document.getElementById('marq')
 
     if(play) {
         stopBtn{{movie.noID}}.style.display = "block"
         playBtn{{movie.noID}}.style.display = "none"
-        marq{{movie.noID}}.style.display = "none"
+        marq.style.display = "none"
     } else {
         stopBtn{{movie.noID}}.style.display = "none"
         playBtn{{movie.noID}}.style.display = "block"
-        marq{{movie.noID}}.style.display = "block"
+        marq.style.display = "block"
     }
 }
 </script>

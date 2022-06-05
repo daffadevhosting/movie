@@ -11,7 +11,7 @@
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
     {% else %}
-    <meta property="og:image" content="{{ site.poster }}" />
+    <meta property="og:image" content="{{ site.url }}{{ site.poster }}" />
     <meta property="og:title" content="{{ site.name }}">
     <meta property="og:description" content="{{ site.description }}" />
     {% endif %}
