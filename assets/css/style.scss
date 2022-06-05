@@ -12,10 +12,10 @@
 /**************/
 /* BASE RULES */
 /**************/
-html {background:#666666;
+html {background:$dark;
 
   @include mobile {
-    background:#fff;
+    background:$light;
   }
 }
 .undermain {
@@ -51,7 +51,6 @@ html {background:#666666;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
   font-weight: bold;
   padding: 0;
 
@@ -129,10 +128,6 @@ img {
   max-width: none;
 }
 
-.date {
-  font-style: italic;
-}
-
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
@@ -164,10 +159,16 @@ img {
 /*********************/
 
 //
-// .masthead
-//
+.toolmodal {
+    position: absolute;
+    z-index: 9;
+    display: block;
+    top: 0;
+}
+
 .ipc-watchlist-ribbon {
     display: block;
+    font-size: 17px;
     position: absolute;
     z-index: 9999999;
     top: 0;
@@ -241,32 +242,6 @@ img {
   }
 }
 
-nav {
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
-  font-size: 18px;
-
-  @include mobile {
-    float: none;
-    margin-top: 9px;
-    display: block;
-    font-size: 16px;
-  }
-
-  a {
-    margin-left: 20px;
-    color: $darkGray;
-    text-align: right;
-    font-weight: 300;
-    letter-spacing: 1px;
-
-    @include mobile {
-      margin: 0 10px;
-      color: $blue;
-    }
-  }
-}
 
 //
 // .main

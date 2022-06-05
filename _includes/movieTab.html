@@ -10,7 +10,7 @@
   <ion-avatar slot="start">
     <img src="{{site.avatar}}">
   </ion-avatar>
-  <ion-label>{{site.name}}</ion-label>
+  <ion-title>{{site.name}}</ion-title>
           <ion-buttons slot="end">
             <ion-menu-button id="trigger-modal" auto-hide="false"></ion-menu-button>
           </ion-buttons>
@@ -31,14 +31,13 @@
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
-<ion-buttons class="hideme">
+<ion-buttons>
 <ion-button color="success" href="{{movie.url}}" target="iframe" onclick="playMe{{movie.noID}}(true)" id="playBtn-{{movie.noID}}">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
 </ion-button>
 <ion-buttons>
           </ion-item>
-
 <script>
  function playMe{{movie.noID}}(play) {
         var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
@@ -91,54 +90,3 @@ function playMe{{movie.noID}}(play) {
   </ion-modal>
           </ion-content>
         </ion-tab>
-<script>
-  const sheetModal = document.querySelector('#menu');
-  const cardModal = document.querySelector('#menuHome');
-  const app = document.querySelector('ion-app');
-
-  sheetModal.breakpoints = [0.1, 0.6, 0.6];
-  sheetModal.initialBreakpoint = 0.6;
-  
-  cardModal.swipeToClose = true;
-  cardModal.presentingElement = document.querySelector('ion-app');
-  
-  canDismissModal.canDismiss = async () => {
-    const actionSheet = document.createElement('ion-action-sheet');
-    
-    actionSheet.header = 'Are you sure you want to discard your changes?';
-    actionSheet.buttons = [
-      {
-        text: 'Discard Changes',
-        role: 'destructive'
-      },
-      {
-        text: 'Keep Editing',
-        role: 'cancel'
-      }
-    ];
-    
-    app.appendChild(actionSheet);
-    
-    await actionSheet.present();
-            
-    const { role } = await actionSheet.onDidDismiss();
-    
-    if (role === 'destructive') {
-      return true;
-    }
-    
-    return false;    
-  }
-
-async function dismissMe() {
-  await sheetModal.dismiss({
-    'dismissed': true
-  });
-}
-
-async function dismissI() {
-  await cardModal.dismiss({
-    'dismissed': true
-  });
-}
-</script>

@@ -11,7 +11,7 @@
 
           <ion-content fullscreen no-padding>
             {% for post in site.posts %}
-          <div style="padding-top:56.25%;position:relative;">
+          <div style="padding-top:56.25%;position:relative;" id="Post{{ post.date | date: '%-m%-d%y' }}">
     {% include ribon.html %}
 <img src="{{post.poster}}" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"/>
 </div>
@@ -21,19 +21,41 @@
     <img src="{{post.ava}}">
   </ion-avatar>
   <ion-label><h3 color="dark">{{post.title}}</h3><p><ion-icon color="warning" name="star"></ion-icon> {{post.star}}</p></ion-label>
+</ion-item>
+        </ion-toolbar>
+  <ion-modal trigger="Post{{ post.date | date: '%-m%-d%y' }}" id="menuPost{{ post.date | date: '%-m%-d%y' }}">
+<ion-modal-header collapse="fade" translucent="true">
+<ion-toolbar fullscreen no-padding>
+          <div style="padding-top:56.25%;position:relative;">
+<iframe src="{{post.video}}" style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;" allowFullScreen="true" allow="encrypted-media" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture"></iframe>
+</div>
+</ion-toolbar>
+        <ion-toolbar>
+            <ion-item rel="tooltip" data-original-title="Tarik kebawah untuk menutup">
+                <ion-avatar slot="start">
+                    <img src={{post.ava}}/>
+                </ion-avatar>
+                <ion-label><h2>{{post.title}}</h2></ion-label>
 <ion-button color="dark" href="{{ site.baseurl }}{{post.url}}">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Buka</ion-label>
 </ion-button>
-</ion-item>
+            </ion-item>
         </ion-toolbar>
+     </ion-modal-header>
+    <ion-content class="ion-padding">
+        
+    </ion-content>
+  </ion-modal>
             {% endfor %}
+          </ion-content>
+        </ion-tab>
   <ion-modal trigger="trigger-home"  id="menuHome">
 <ion-modal-header collapse="fade" translucent="true">
         <ion-toolbar>
 <ion-title>Menu</ion-title>
     <ion-buttons slot="end">
-      <ion-button onClick="dismissI()">
+      <ion-button onClick="dismissIm()">
         <ion-icon color="danger" slot="icon-only" name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -67,5 +89,3 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></ion-content>
   </ion-modal>
-          </ion-content>
-        </ion-tab>

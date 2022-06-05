@@ -1,4 +1,80 @@
 <script src="{{ site.baseurl }}/assets/js/dark.js"></script>
+            {% for post in site.posts %}
+<script>
+  const postModal{{ post.date | date: "%-m%-d%y" }} = document.querySelector('#menuPost{{ post.date | date: "%-m%-d%y" }}');
+  const app{{ post.date | date: "%-m%-d%y" }} = document.querySelector('ion-page');
+
+  postModal{{ post.date | date: "%-m%-d%y" }}.breakpoints = [0.0, 0.0, 0.0];
+  postModal{{ post.date | date: "%-m%-d%y" }}.initialBreakpoint = 1.0;
+
+
+async function dismissPost{{ post.date | date: "%-m%-d%y" }}() {
+  await postModal{{ post.date | date: "%-m%-d%y" }}.dismiss({
+    'canDismiss': true
+  });
+}
+</script>
+            {% endfor %}
+<script>
+$('ion-toolbar ion-item').tooltip().eq(0).tooltip('show').tooltip('disable').one('mouseout', function() {
+  $(this).tooltip('enable');
+});
+
+setTimeout(function() {
+ $('ion-toolbar ion-item').tooltip().eq(0).tooltip('hide').tooltip('enable');
+}, 5000);
+</script>
+<script>
+  const sheetModal = document.querySelector('#menu');
+  const cardModal = document.querySelector('#menuHome');
+  const app = document.querySelector('ion-app');
+
+  sheetModal.breakpoints = [0.0, 0.0, 0.0];
+  sheetModal.initialBreakpoint = 0.6;
+  
+  cardModal.swipeToClose = true;
+  cardModal.presentingElement = document.querySelector('ion-app');
+  
+  canDismissModal.canDismiss = async () => {
+    const actionSheet = document.createElement('ion-action-sheet');
+    
+    actionSheet.header = 'Are you sure you want to discard your changes?';
+    actionSheet.buttons = [
+      {
+        text: 'Discard Changes',
+        role: 'destructive'
+      },
+      {
+        text: 'Keep Editing',
+        role: 'cancel'
+      }
+    ];
+    
+    app.appendChild(actionSheet);
+    
+    await actionSheet.present();
+            
+    const { role } = await actionSheet.onDidDismiss();
+    
+    if (role === 'destructive') {
+      return true;
+    }
+    
+    return false;    
+  }
+
+async function dismissMe() {
+  await sheetModal.dismiss({
+    'dismissed': true
+  });
+}
+
+async function dismissIm() {
+  await cardModal.dismiss({
+    'canDismiss': true
+  });
+}
+</script>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
