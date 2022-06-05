@@ -2,7 +2,7 @@
 layout: post
 title: Venom - Let There Be Carnage (2021)
 ava: https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2021/09/30/1085146066.jpg
-poster: https://androidbutut.my.id/venom-2/img/
+poster: https://dash.fembed.com/asset/userdata/404660/poster/j/zw/jzwd20hdy730-ynx.png?v=1654181138
 movie1: https://androidbutut.my.id/venom-2/
 video: https://daffa-adr.my.id/v/jzwd20hdy730-ynx
 dl: https://daffa-adr.my.id/f/jzwd20hdy730-ynx

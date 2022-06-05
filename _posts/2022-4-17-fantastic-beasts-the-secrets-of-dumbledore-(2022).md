@@ -2,7 +2,7 @@
 layout: post
 title: Fantastic Beasts (The Secrets of Dumbledore)-(2022)
 ava: https://www.themoviedb.org/t/p/original/fHfcTRBx2jNMiwSJd2m2ehAyrnh.jpg
-poster: https://androidbutut.my.id/fantastic-beasts/img/
+poster: https://dash.fembed.com/asset/userdata/404660/poster/z/6-/z6-nqyijq8-dxkgn.png?v=1654126462
 movie1: https://androidbutut.my.id/fantastic-beasts/
 video: https://daffa-adr.my.id/v/z6-nqyijq8-dxkgn
 dl: https://daffa-adr.my.id/f/k3n0lrb3xd-w86xn

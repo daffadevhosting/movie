@@ -2,7 +2,7 @@
 layout: post
 title: Spider-Man - No Way Home (2021)
 ava: https://www.themoviedb.org/t/p/original/oU2lDZX51WoGEEZ6OrSWoZ2ar8z.jpg
-poster: https://androidbutut.my.id/spiderman-nowayhome/img/
+poster: https://dash.fembed.com/asset/userdata/404660/poster/4/xr/4xry65izq-jr-03y.png?v=1654149539
 movie1: https://androidbutut.my.id/spiderman-nowayhome/
 video: https://daffa-adr.my.id/v/4xry65izq-jr-03y
 dl: https://daffa-adr.my.id/f/4xry65izq-jr-03y

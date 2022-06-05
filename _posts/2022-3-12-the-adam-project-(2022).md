@@ -2,7 +2,7 @@
 layout: post
 title: The Adam Project (2022)
 ava: https://www.layar.id/wp-content/uploads/2022/03/The-Adam-Project.jpg
-poster: https://androidbutut.my.id/the-adam-project/img/
+poster: https://dash.fembed.com/asset/userdata/404660/poster/6/1m/61m8dyh02-xe-z05.png?v=1654125815
 movie1: https://androidbutut.my.id/the-adam-project/
 video: https://daffa-adr.my.id/v/61m8dyh02-xe-z05
 dl: https://daffa-adr.my.id/f/61m8dyh02-xe-z05

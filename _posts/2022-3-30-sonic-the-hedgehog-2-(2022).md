@@ -2,7 +2,7 @@
 layout: post
 title: Sonic the Hedgehog 2 (2022)
 ava: https://cinemags.co.id/wp-content/uploads/2022/03/sonic-the-hedgehog-2-poster.jpg
-poster: https://androidbutut.my.id/sonic-the-hedgehog-2/img/
+poster: https://dash.fembed.com/asset/userdata/404660/poster/k/3n/k3n0lrb3xdjkz7lw.png?v=1654139599
 movie: https://androidbutut.my.id/sonic-the-hedgehog-2/
 video: https://daffa-adr.my.id/v/k3n0lrb3xdjkz7lw
 dl: https://daffa-adr.my.id/f/k3n0lrb3xdjkz7lw

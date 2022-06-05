@@ -2,7 +2,7 @@
 layout: post
 title: Doctor Strange in the Multiverse of Madness (2022)
 ava: https://assets.promediateknologi.com/crop/9x17:687x950/x/photo/2022/02/15/38964766.jpg
-poster: https://androidbutut.my.id/dr-strange-2/img/
+poster: https://dash.fembed.com/asset/userdata/404660/poster/p/6r/p6rze-im6l23zy-j.png?v=1654105328
 movie1: https://androidbutut.my.id/dr-strange-2/
 video: https://daffa-adr.my.id/v/p6rze-im6l23zy-j
 dl: https://daffa-adr.my.id/f/p6rze-im6l23zy-j

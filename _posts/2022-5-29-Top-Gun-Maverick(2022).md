@@ -2,7 +2,7 @@
 layout: post
 title: Top Gun - Maverick (2022)
 ava: https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg
-poster: https://androidbutut.my.id/topgun-2/img/
+poster: https://dash.fembed.com/asset/userdata/404660/poster/n/z7/nz71lkh2nzy-3wr0.png?v=1654105575
 movie1: https://androidbutut.my.id/topgun-2/
 video: https://daffa-adr.my.id/v/nz71lkh2nzy-3wr0
 dl: https://daffa-adr.my.id/f/nz71lkh2nzy-3wr0
