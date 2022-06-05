@@ -1,1 +1,18 @@
 <script src="{{ site.baseurl }}/assets/js/dark.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyABGt1oPCnkJVphDFIU8LUbeBO4xYKgn4w",
+    authDomain: "movie-stream-71b63.firebaseapp.com",
+    projectId: "movie-stream-71b63",
+    storageBucket: "movie-stream-71b63.appspot.com",
+    messagingSenderId: "994213969592",
+    appId: "1:994213969592:web:02775b0d2ae96cc2fafe4d",
+    measurementId: "G-PW0PDT2KN8"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>

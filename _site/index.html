@@ -2,7 +2,7 @@
 <html no-padding>
   <head>
     
-<title>DAFFtube – Web Stream from Nowhere</title>
+<title>DAFFtube – Movie Stream from Nowhere</title>
 
     <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -15,7 +15,7 @@
     
     <meta property="og:image" content="http://localhost:4000/assets/img/dafftube.webp" />
     <meta property="og:title" content="DAFFtube">
-    <meta property="og:description" content="Web Stream from Nowhere" />
+    <meta property="og:description" content="Movie Stream from Nowhere" />
     
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -39,11 +39,13 @@
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1171588080744378"
      crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/dark.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <link rel="alternate" type="application/rss+xml" title="DAFFtube - Web Stream from Nowhere" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="DAFFtube - Movie Stream from Nowhere" href="/feed.xml" />
 <style type="text/css">
 .preloader {
   position: fixed;
@@ -94,7 +96,7 @@ $(".preloader").fadeOut();
   "keywords": "lalajo pilem, nonton streaming, Movie Streaming, Nonton Gratis",
   "dateModified": "",
   "mainEntityOfPage": "http://localhost:4000/",
-  "description": "Web Stream from Nowhere"
+  "description": "Movie Stream from Nowhere"
 }
 </script>
 
@@ -522,7 +524,7 @@ $(".preloader").fadeOut();
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
-<ion-buttons id="marq8">
+<ion-buttons class="hideme">
 <ion-button color="success" href="https://daffa-adr.my.id/v/g7e4k6a-5n6yj80n" target="iframe" onclick="playMe8(true)" id="playBtn-8">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
@@ -535,15 +537,18 @@ $(".preloader").fadeOut();
         var playBtn8 = document.getElementById('playBtn-8')
         var stopBtn8 = document.getElementById('stopBtn-8')
         var marq = document.getElementById('marq')
+        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn8.style.display = "block"
             playBtn8.style.display = "none"
-            marq.style.display = "none"
+            marq.style.display = "block"
+            hide.style.display = "block"
         } else {
             playBtn8.style.display = "none"
             stopBtn8.style.display = "block"
             marq.style.display = "none"
+            hide.style.display = "none"
         }
     }
 
@@ -551,15 +556,18 @@ function playMe8(play) {
     var playBtn8 = document.getElementById('playBtn-8')
     var stopBtn8 = document.getElementById('stopBtn-8')
     var marq = document.getElementById('marq')
+    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn8.style.display = "block"
         playBtn8.style.display = "none"
         marq.style.display = "none"
+        hide.style.display = "none"
     } else {
         stopBtn8.style.display = "none"
         playBtn8.style.display = "block"
         marq.style.display = "block"
+        hide.style.display = "block"
     }
 }
 </script>
@@ -569,14 +577,14 @@ function playMe8(play) {
               <img src="https://static.onecms.io/wp-content/uploads/sites/20/2020/01/ff9.jpg" />
             </ion-avatar>
             <ion-label>
-              <h3 color="dark">AF9 Fast & Furious 9 (2021)</h3>
+              <h3 color="dark">F9 Fast & Furious 9 (2021)</h3>
               <p>Vin Diesel, Michelle Rodriguez, Jordana Brewster</p>
             </ion-label>
 <ion-button color="danger" href="javascript: history.back()" onclick="playMe16(false)" id="stopBtn-16" style="display:none">
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
-<ion-buttons id="marq16">
+<ion-buttons class="hideme">
 <ion-button color="success" href="https://daffa-adr.my.id/v/e50-p3c-mdnlyqg-" target="iframe" onclick="playMe16(true)" id="playBtn-16">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
@@ -589,15 +597,18 @@ function playMe8(play) {
         var playBtn16 = document.getElementById('playBtn-16')
         var stopBtn16 = document.getElementById('stopBtn-16')
         var marq = document.getElementById('marq')
+        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn16.style.display = "block"
             playBtn16.style.display = "none"
-            marq.style.display = "none"
+            marq.style.display = "block"
+            hide.style.display = "block"
         } else {
             playBtn16.style.display = "none"
             stopBtn16.style.display = "block"
             marq.style.display = "none"
+            hide.style.display = "none"
         }
     }
 
@@ -605,15 +616,18 @@ function playMe16(play) {
     var playBtn16 = document.getElementById('playBtn-16')
     var stopBtn16 = document.getElementById('stopBtn-16')
     var marq = document.getElementById('marq')
+    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn16.style.display = "block"
         playBtn16.style.display = "none"
         marq.style.display = "none"
+        hide.style.display = "none"
     } else {
         stopBtn16.style.display = "none"
         playBtn16.style.display = "block"
         marq.style.display = "block"
+        hide.style.display = "block"
     }
 }
 </script>
@@ -630,7 +644,7 @@ function playMe16(play) {
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
-<ion-buttons id="marq24">
+<ion-buttons class="hideme">
 <ion-button color="success" href="https://daffa-adr.my.id/v/z6-nqyijq8nzkz37" target="iframe" onclick="playMe24(true)" id="playBtn-24">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
@@ -643,15 +657,18 @@ function playMe16(play) {
         var playBtn24 = document.getElementById('playBtn-24')
         var stopBtn24 = document.getElementById('stopBtn-24')
         var marq = document.getElementById('marq')
+        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn24.style.display = "block"
             playBtn24.style.display = "none"
-            marq.style.display = "none"
+            marq.style.display = "block"
+            hide.style.display = "block"
         } else {
             playBtn24.style.display = "none"
             stopBtn24.style.display = "block"
             marq.style.display = "none"
+            hide.style.display = "none"
         }
     }
 
@@ -659,15 +676,18 @@ function playMe24(play) {
     var playBtn24 = document.getElementById('playBtn-24')
     var stopBtn24 = document.getElementById('stopBtn-24')
     var marq = document.getElementById('marq')
+    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn24.style.display = "block"
         playBtn24.style.display = "none"
         marq.style.display = "none"
+        hide.style.display = "none"
     } else {
         stopBtn24.style.display = "none"
         playBtn24.style.display = "block"
         marq.style.display = "block"
+        hide.style.display = "block"
     }
 }
 </script>
@@ -684,7 +704,7 @@ function playMe24(play) {
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
-<ion-buttons id="marq32">
+<ion-buttons class="hideme">
 <ion-button color="success" href="https://daffa-adr.my.id/v/jzwd20hdy730-ynx" target="iframe" onclick="playMe32(true)" id="playBtn-32">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
@@ -697,15 +717,18 @@ function playMe24(play) {
         var playBtn32 = document.getElementById('playBtn-32')
         var stopBtn32 = document.getElementById('stopBtn-32')
         var marq = document.getElementById('marq')
+        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn32.style.display = "block"
             playBtn32.style.display = "none"
-            marq.style.display = "none"
+            marq.style.display = "block"
+            hide.style.display = "block"
         } else {
             playBtn32.style.display = "none"
             stopBtn32.style.display = "block"
             marq.style.display = "none"
+            hide.style.display = "none"
         }
     }
 
@@ -713,15 +736,18 @@ function playMe32(play) {
     var playBtn32 = document.getElementById('playBtn-32')
     var stopBtn32 = document.getElementById('stopBtn-32')
     var marq = document.getElementById('marq')
+    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn32.style.display = "block"
         playBtn32.style.display = "none"
         marq.style.display = "none"
+        hide.style.display = "none"
     } else {
         stopBtn32.style.display = "none"
         playBtn32.style.display = "block"
         marq.style.display = "block"
+        hide.style.display = "block"
     }
 }
 </script>
@@ -835,6 +861,23 @@ async function dismissI() {
     
 
     <script src="/assets/js/dark.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyABGt1oPCnkJVphDFIU8LUbeBO4xYKgn4w",
+    authDomain: "movie-stream-71b63.firebaseapp.com",
+    projectId: "movie-stream-71b63",
+    storageBucket: "movie-stream-71b63.appspot.com",
+    messagingSenderId: "994213969592",
+    appId: "1:994213969592:web:02775b0d2ae96cc2fafe4d",
+    measurementId: "G-PW0PDT2KN8"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 
   </body>
 </html>

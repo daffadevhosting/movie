@@ -31,7 +31,7 @@
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
-<ion-buttons id="marq{{movie.noID}}">
+<ion-buttons class="hideme">
 <ion-button color="success" href="{{movie.url}}" target="iframe" onclick="playMe{{movie.noID}}(true)" id="playBtn-{{movie.noID}}">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
@@ -44,15 +44,18 @@
         var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
         var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
         var marq = document.getElementById('marq')
+        const hide = getElementsByClassName('hideme')
 
         if(play) {
             stopBtn{{movie.noID}}.style.display = "block"
             playBtn{{movie.noID}}.style.display = "none"
-            marq.style.display = "none"
+            marq.style.display = "block"
+            hide.style.display = "block"
         } else {
             playBtn{{movie.noID}}.style.display = "none"
             stopBtn{{movie.noID}}.style.display = "block"
             marq.style.display = "none"
+            hide.style.display = "none"
         }
     }
 
@@ -60,15 +63,18 @@ function playMe{{movie.noID}}(play) {
     var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
     var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
     var marq = document.getElementById('marq')
+    const hide = getElementsByClassName('hideme')
 
     if(play) {
         stopBtn{{movie.noID}}.style.display = "block"
         playBtn{{movie.noID}}.style.display = "none"
         marq.style.display = "none"
+        hide.style.display = "none"
     } else {
         stopBtn{{movie.noID}}.style.display = "none"
         playBtn{{movie.noID}}.style.display = "block"
         marq.style.display = "block"
+        hide.style.display = "block"
     }
 }
 </script>

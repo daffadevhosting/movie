@@ -2,7 +2,7 @@
 <html>
   <head>
     
-<title>The Adam Project (2022) – DAFFtube – Web Stream from Nowhere</title>
+<title>The Adam Project (2022) – DAFFtube – Movie Stream from Nowhere</title>
 
     <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -40,11 +40,13 @@
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1171588080744378"
      crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/dark.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <link rel="alternate" type="application/rss+xml" title="DAFFtube - Web Stream from Nowhere" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="DAFFtube - Movie Stream from Nowhere" href="/feed.xml" />
 <style type="text/css">
 .preloader {
   position: fixed;
@@ -95,7 +97,7 @@ $(".preloader").fadeOut();
   "keywords": "lalajo pilem, nonton streaming, Movie Streaming, Nonton Gratis, The Adam Project (2022)",
   "dateModified": "2022-03-12T00:00:00+07:00",
   "mainEntityOfPage": "http://localhost:4000/the-adam-project-(2022)",
-  "description": "Web Stream from Nowhere – Adam Reed, usia 12 tahun dan masih berduka atas kematian mendadak ayahnya setahun sebelumnya, berjalan ke garasinya suatu malam untuk menemukan seorang pilot yang terluka bersembunyi di sana. Pilot misterius ini ternyata adalah versi dirinya yang lebih tua dari masa depan, di mana perjalanan waktu masih dalam tahap awal. Dia telah mempertaruhkan segalanya untuk kembali pada waktunya dalam misi rahasia. Bersama-sama mereka harus memulai petualangan ke masa lalu untuk menemukan ayah mereka, memperbaiki keadaan, dan menyelamatkan dunia. Saat ketiganya bekerja bersama, Adam muda dan dewasa berdamai dengan kehilangan ayah mereka dan memiliki kesempatan untuk menyembuhkan luka yang telah membentuk mereka. Menambah tantangan misi, kedua Adams menemukan bahwa mereka benar-benar tidak menyukai satu sama lain, dan jika mereka ingin menyelamatkan dunia, pertama-tama mereka harus mencari cara untuk bergaul.
+  "description": "Movie Stream from Nowhere – Adam Reed, usia 12 tahun dan masih berduka atas kematian mendadak ayahnya setahun sebelumnya, berjalan ke garasinya suatu malam untuk menemukan seorang pilot yang terluka bersembunyi di sana. Pilot misterius ini ternyata adalah versi dirinya yang lebih tua dari masa depan, di mana perjalanan waktu masih dalam tahap awal. Dia telah mempertaruhkan segalanya untuk kembali pada waktunya dalam misi rahasia. Bersama-sama mereka harus memulai petualangan ke masa lalu untuk menemukan ayah mereka, memperbaiki keadaan, dan menyelamatkan dunia. Saat ketiganya bekerja bersama, Adam muda dan dewasa berdamai dengan kehilangan ayah mereka dan memiliki kesempatan untuk menyembuhkan luka yang telah membentuk mereka. Menambah tantangan misi, kedua Adams menemukan bahwa mereka benar-benar tidak menyukai satu sama lain, dan jika mereka ingin menyelamatkan dunia, pertama-tama mereka harus mencari cara untuk bergaul.
 "
 }
 </script>
@@ -201,6 +203,23 @@ $(".preloader").fadeOut();
     
 
     <script src="/assets/js/dark.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyABGt1oPCnkJVphDFIU8LUbeBO4xYKgn4w",
+    authDomain: "movie-stream-71b63.firebaseapp.com",
+    projectId: "movie-stream-71b63",
+    storageBucket: "movie-stream-71b63.appspot.com",
+    messagingSenderId: "994213969592",
+    appId: "1:994213969592:web:02775b0d2ae96cc2fafe4d",
+    measurementId: "G-PW0PDT2KN8"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 
 <script>
 var elem = document.getElementById("fullscreen");
