@@ -2,10 +2,14 @@
         <ion-tab tab="home">
           <ion-header translucent>
             <ion-toolbar>
-              <ion-title>{{site.name}}</ion-title>
+<ion-item lines="none">
+  <ion-avatar slot="start">
+    <img src="{{site.avatar}}">
+  </ion-avatar><ion-label>{{site.name}}</ion-label>
           <ion-buttons slot="end">
             <ion-menu-button id="trigger-home" auto-hide="false"></ion-menu-button>
           </ion-buttons>
+</ion-item>
             </ion-toolbar>
           </ion-header>
 
