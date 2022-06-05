@@ -30,36 +30,44 @@
   <ion-icon slot="start" name="stop"></ion-icon>
   <ion-label>Stop</ion-label>
 </ion-button>
-<ion-button color="light" href="{{movie.url}}" target="iframe" onclick="playMe{{movie.noID}}(true)" id="playBtn-{{movie.noID}}">
+<ion-buttons id="marq{{movie.noID}}">
+<ion-button color="success" href="{{movie.url}}" target="iframe" onclick="playMe{{movie.noID}}(true)" id="playBtn-{{movie.noID}}">
   <ion-icon slot="start" name="play"></ion-icon>
   <ion-label>Play</ion-label>
 </ion-button>
+<ion-buttons>
           </ion-item>
 
 <script>
  function playMe{{movie.noID}}(play) {
         var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
         var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
+        var marq{{movie.noID}} = document.getElementById('marq{{movie.noID}}')
 
         if(play) {
             stopBtn{{movie.noID}}.style.display = "block"
             playBtn{{movie.noID}}.style.display = "none"
+            marq{{movie.noID}}.style.display = "none"
         } else {
             playBtn{{movie.noID}}.style.display = "none"
             stopBtn{{movie.noID}}.style.display = "block"
+            marq{{movie.noID}}.style.display = "none"
         }
     }
 
 function playMe{{movie.noID}}(play) {
     var playBtn{{movie.noID}} = document.getElementById('playBtn-{{movie.noID}}')
     var stopBtn{{movie.noID}} = document.getElementById('stopBtn-{{movie.noID}}')
+    var marq{{movie.noID}} = document.getElementById('marq{{movie.noID}}')
 
     if(play) {
         stopBtn{{movie.noID}}.style.display = "block"
         playBtn{{movie.noID}}.style.display = "none"
+        marq{{movie.noID}}.style.display = "none"
     } else {
         stopBtn{{movie.noID}}.style.display = "none"
         playBtn{{movie.noID}}.style.display = "block"
+        marq{{movie.noID}}.style.display = "block"
     }
 }
 </script>
